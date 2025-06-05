@@ -15,7 +15,11 @@ FROM
     
 JOIN 
 	categories C on 
-		(C.CategoryID = P.CategoryID);
+		(C.CategoryID = P.CategoryID)
+        
+ORDER BY
+	C.CategoryName,
+    P.ProductName;
     
 -- 2. List the product id, product name, unit price and supplier name of all
 -- products that cost more than $75. Order by product name.  
@@ -85,10 +89,7 @@ SELECT
 
 FROM
 	products P
-        
-JOIN 
-	categories C on 
-		(C.CategoryID = P.CategoryID)
+	Join categories C on (C.CategoryID = P.CategoryID)
         
 WHERE
 	P.UnitPrice	= (
@@ -137,10 +138,6 @@ FROM
 JOIN
 	`order details` OD on
 		(OD.OrderID = O.OrderID)
-        
-JOIN 
-	shippers S on 
-		(S.ShipperID = O.ShipVia)
         
 WHERE
 	OD.ProductID = 34;

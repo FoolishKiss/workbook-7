@@ -34,7 +34,7 @@ USE
 UPDATE 
 	products 
 SET 
-	UnitPrice = 23
+	UnitPrice = UnitPrice * 1.15
 WHERE
 	ProductID = 78;
 	
@@ -81,11 +81,11 @@ WHERE
 USE
 	northwind;
 
-SELECT * FROM products;
+SELECT ProductName FROM products;
 
 -- 9. List all suppliers
 
 USE
 	northwind;
 
-SELECT * FROM suppliers;
+SELECT CompanyName as Suppliers FROM suppliers;

@@ -12,10 +12,7 @@ C.CategoryName
 
 FROM
 	products P
-    
-JOIN 
-	categories C on 
-		(C.CategoryID = P.CategoryID)
+    JOIN categories C on (C.CategoryID = P.CategoryID)
         
 ORDER BY
 	C.CategoryName,
@@ -36,10 +33,7 @@ SELECT
 
 FROM
 	products P
-    
-JOIN 
-	suppliers S on 
-		(P.SupplierID = S.SupplierID)
+	JOIN suppliers S on (P.SupplierID = S.SupplierID)
 
 WHERE 
 	UnitPrice >= 75
@@ -63,14 +57,8 @@ SELECT
 
 FROM
 	products P
-    
-JOIN 
-	suppliers S on 
-		(P.SupplierID = S.SupplierID)
-        
-JOIN 
-	categories C on 
-		(C.CategoryID = P.CategoryID)
+	JOIN suppliers S on (P.SupplierID = S.SupplierID)
+	JOIN categories C on (C.CategoryID = P.CategoryID)
         
 ORDER BY 
 	P.ProductName; 
@@ -111,10 +99,7 @@ SELECT
 
 FROM
 	orders O
-        
-JOIN 
-	shippers S on 
-		(S.ShipperID = O.ShipVia)
+	JOIN shippers S on (S.ShipperID = O.ShipVia)
         
 WHERE
 	O.ShipCountry	= "Germany";
@@ -134,10 +119,7 @@ SELECT
     
 FROM
 	orders O
-    
-JOIN
-	`order details` OD on
-		(OD.OrderID = O.OrderID)
+    JOIN `order details` OD on (OD.OrderID = O.OrderID)
         
 WHERE
 	OD.ProductID = 34;
